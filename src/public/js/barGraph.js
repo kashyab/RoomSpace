@@ -48,13 +48,12 @@ d3.csv("doc/data.csv", function(d) {
       .attr("width", x.bandwidth())
       .attr("height", function(d) { return height - y(d.Total); })
       .on("mousemove", function(d){
-                  tooltip
-                    .style("left", d3.event.pageX - 50 + "px")
-                    .style("top", d3.event.pageY)
-                    .style("display", "inline-block")
-                    .html((d.Date) + "<br>" + "total: " + (d.Total));
-              })
-          		.on("mouseout", function(d){ tooltip.style("display", "none");});
+        tooltip.style("left", d3.event.pageX - 50 + "px")
+        .style("top", d3.event.pageY)
+        .style("display", "inline-block")
+        .html((d.Date) + "<br>" + "total: " + (d.Total));
+      })
+      .on("mouseout", function(d){ tooltip.style("display", "none");});
       });
     }
 barGraph();
